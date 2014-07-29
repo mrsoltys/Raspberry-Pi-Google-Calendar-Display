@@ -15,6 +15,8 @@ I adapted code from two other Projects, and am including copies of them here
 * **/Larmie** - By [Lucas Eckels](http://blog.lucaseckels.com/2009/03/02/larmie-the-arduino-alarm-scheduler/) for some google calendar and serial commands, although the calendar API used here is out of date
 * **/Ferrofluid 2013-2014** - An arduino exhibit at the University of Colorado that uses the same display
 
+Additionlly, You may want to check out [The Roominator](https://github.com/bryanduxbury/roominator) which is a similar project, but looked a little more expensive and intensive than I needed.
+
 Google Calendar API V3
 ----------------------
 
