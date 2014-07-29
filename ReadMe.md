@@ -20,7 +20,7 @@ Additionlly, You may want to check out [The Roominator](https://github.com/bryan
 Google Calendar API V3
 ----------------------
 
-This project relies heavily on [Google Calendar API V3](https://developers.google.com/google-apps/calendar/).  You'll need to set up a project and get your own developer account for the authentication.
+This project relies heavily on [Google Calendar API V3](https://developers.google.com/google-apps/calendar/).  Head over to the [Google Developers Console](https://console.developers.google.com/project), create a project, and click "Credentials" to get started.  You'll need to create a new client ID as well as Public API access.  Note: I used a server application API access key, which is tied to an IP address.  This could be an issue for the future, but to find your IP just google ["What's my IP address?"](https://www.google.com/search?q=whats+my+ip+address).  Be aware of quotas, and that exceeding quotas may result in charges.  
 
 License Information
 -------------------
