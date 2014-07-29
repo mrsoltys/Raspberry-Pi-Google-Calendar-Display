@@ -4,14 +4,14 @@ Raspberry Pi Google Calendar Display
 Gets current event from a google calendar and displays to OLED display.
 
 Hardware:
-*[Raspberry Pi B+](https://www.sparkfun.com/products/12994/)
-*[NHD 3.12 OLED Display](http://www.digikey.com/product-detail/en/NHD-3.12-25664UMY3/NHD-3.12-25664UMY3-ND/3712528)
-*[Logic Level Converter Bi-Directional](https://www.sparkfun.com/products/12009)
+* [Raspberry Pi B+](https://www.sparkfun.com/products/12994/)
+* [NHD 3.12 OLED Display](http://www.digikey.com/product-detail/en/NHD-3.12-25664UMY3/NHD-3.12-25664UMY3-ND/3712528)
+* [Logic Level Converter Bi-Directional](https://www.sparkfun.com/products/12009)
 
 Repository Contents
 -------------------
 
-I adapted code from two other Projects, and am including copies of it here
+I adapted code from two other Projects, and am including copies of them here
 * **/Larmie** - By [Lucas Eckels](http://blog.lucaseckels.com/2009/03/02/larmie-the-arduino-alarm-scheduler/) for some google calendar and serial commands, although the calendar API used here is out of date
 * **/Ferrofluid 2013-2014** - An arduino exhibit at the University of Colorado that uses the same display
 
