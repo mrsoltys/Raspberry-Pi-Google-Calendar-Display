@@ -1,0 +1,6 @@
+Added Component: Designator=Q?(TO-92A)
+Added Pin To Net: NetName=GND Pin=Q?-1
+Added Net: Name=GND
+Added Pin To Net: NetName=VCC Pin=Q?-2
+Added Net: Name=VCC
+Added Class: Name=Sheet1

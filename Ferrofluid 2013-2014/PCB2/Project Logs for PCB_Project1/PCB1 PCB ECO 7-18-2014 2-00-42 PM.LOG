@@ -1,0 +1,54 @@
+Change Component Comment : Designator=Q? Old Comment=2N3904 New Comment=MCP1700
+Change Component Designator: OldDesignator=Q? NewDesignator=Q1
+Added Component: Designator=P1(HDR1X6)
+Added Component: Designator=P2(HDR1X6)
+Added Component: Designator=P3(HDR1X6)
+Added Component: Designator=P4(HDR1X22)
+Added Pin To Net: NetName=GND Pin=P1-1
+Added Pin To Net: NetName=VCC Pin=P1-2
+Added Pin To Net: NetName=GND Pin=P2-3
+Added Pin To Net: NetName=VCC Pin=P2-4
+Added Pin To Net: NetName=GND Pin=P3-4
+Added Pin To Net: NetName=GND Pin=P4-1
+Added Pin To Net: NetName=GND Pin=P4-5
+Added Pin To Net: NetName=GND Pin=P4-6
+Added Pin To Net: NetName=GND Pin=P4-10
+Added Pin To Net: NetName=GND Pin=P4-11
+Added Pin To Net: NetName=GND Pin=P4-12
+Added Pin To Net: NetName=GND Pin=P4-13
+Added Pin To Net: NetName=GND Pin=P4-14
+Added Pin To Net: NetName=GND Pin=P4-17
+Added Pin To Net: NetName=GND Pin=P4-18
+Added Pin To Net: NetName=3.3V Pin=P3-3
+Added Pin To Net: NetName=3.3V Pin=P4-2
+Added Pin To Net: NetName=3.3V Pin=P4-15
+Added Pin To Net: NetName=3.3V Pin=Q1-3
+Added Net: Name=3.3V
+Added Pin To Net: NetName=NetP1_3 Pin=P1-3
+Added Pin To Net: NetName=NetP1_3 Pin=P2-6
+Added Net: Name=NetP1_3
+Added Pin To Net: NetName=NetP1_4 Pin=P1-4
+Added Pin To Net: NetName=NetP1_4 Pin=P2-5
+Added Net: Name=NetP1_4
+Added Pin To Net: NetName=NetP1_5 Pin=P1-5
+Added Pin To Net: NetName=NetP1_5 Pin=P2-2
+Added Net: Name=NetP1_5
+Added Pin To Net: NetName=NetP1_6 Pin=P1-6
+Added Pin To Net: NetName=NetP1_6 Pin=P2-1
+Added Net: Name=NetP1_6
+Added Pin To Net: NetName=NetP3_1 Pin=P3-1
+Added Pin To Net: NetName=NetP3_1 Pin=P4-16
+Added Net: Name=NetP3_1
+Added Pin To Net: NetName=NetP3_2 Pin=P3-2
+Added Pin To Net: NetName=NetP3_2 Pin=P4-8
+Added Net: Name=NetP3_2
+Added Pin To Net: NetName=NetP3_5 Pin=P3-5
+Added Pin To Net: NetName=NetP3_5 Pin=P4-7
+Added Net: Name=NetP3_5
+Added Pin To Net: NetName=NetP3_6 Pin=P3-6
+Added Pin To Net: NetName=NetP3_6 Pin=P4-4
+Added Net: Name=NetP3_6
+Added Member To Class: ClassName=Sheet1 Member=Component P1 Header 6
+Added Member To Class: ClassName=Sheet1 Member=Component P2 Header 6
+Added Member To Class: ClassName=Sheet1 Member=Component P3 Header 6
+Added Member To Class: ClassName=Sheet1 Member=Component P4 Header 22
