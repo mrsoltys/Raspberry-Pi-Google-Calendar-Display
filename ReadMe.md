@@ -11,6 +11,9 @@ Hardware:
 Repository Contents
 -------------------
 
+The main code to run is gCalDisp.py.  This will call google_calendar.py for authentication, which is verbatium from the [Google Calendar API v3 website](https://developers.google.com/google-apps/calendar/instantiate).  You'll need to create a google developer account, discussed below.
+
+
 I adapted code from two other Projects, and am including copies of them here
 * **/Larmie** - By [Lucas Eckels](http://blog.lucaseckels.com/2009/03/02/larmie-the-arduino-alarm-scheduler/) for some google calendar and serial commands, although the calendar API used here is out of date
 * **/Ferrofluid 2013-2014** - An arduino exhibit at the University of Colorado that uses the same display
