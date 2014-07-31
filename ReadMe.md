@@ -25,6 +25,21 @@ Google Calendar API V3
 
 This project relies heavily on [Google Calendar API V3](https://developers.google.com/google-apps/calendar/).  Head over to the [Google Developers Console](https://console.developers.google.com/project), create a project, and click "Credentials" to get started.  You'll need to create a new client ID as well as Public API access.  Note: I used a server application API access key, which is tied to an IP address.  This could be an issue for the future, but to find your IP just google ["What's my IP address?"](https://www.google.com/search?q=whats+my+ip+address).  Be aware of quotas, and that exceeding quotas may result in charges.  
 
+Getting Started with Raspberry Pi
+---------------------------------
+
+1.  Install Setuptools
+          > wget https://bootstrap.pypa.io/ez_setup.py -O - | sudo python
+2.  Install the Google APIs Client Library for Python
+          > sudo easy_install --upgrade google-api-python-client
+3.  Install gflags
+    a.  Download from [https://code.google.com/p/python-gflags/](https://code.google.com/p/python-gflags/)
+    b.  from the download directory, run: 
+          > sudo python./setup.py install
+4.  Remove Dillo and Midori, install Chromium
+          > sudo apt-get remove dillo midori
+          > sudo apt-get install chromium
+
 License Information
 -------------------
 
