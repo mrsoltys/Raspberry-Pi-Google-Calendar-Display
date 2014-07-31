@@ -35,10 +35,22 @@ Getting Started with Raspberry Pi
 3.  Install gflags
     a.  Download from [https://code.google.com/p/python-gflags/](https://code.google.com/p/python-gflags/)
     b.  from the download directory, run: 
-          > sudo python./setup.py install
+'''
+          sudo python./setup.py install
+'''
 4.  Remove Dillo and Midori, install Chromium
-          > sudo apt-get remove dillo midori
-          > sudo apt-get install chromium
+'''
+          sudo apt-get remove dillo midori
+          sudo apt-get install chromium
+'''
+5. Run for the first stime, and authenticate
+    a.  from this directory run
+'''
+           sudo python gCalDisp.py
+'''
+    b.  A link will appear, and you'll have to copy-paste this to a browser and then get a verification code
+    c.  Copy-paste the verification code back to the terminal
+
 
 License Information
 -------------------
