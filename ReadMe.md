@@ -48,8 +48,8 @@ Getting Started with Raspberry Pi
 '''
            sudo python gCalDisp.py
 '''
-    b.  A link will appear, and you'll have to copy-paste this to a browser and then get a verification code
-    c.  Copy-paste the verification code back to the terminal
+    b.  A link will appear, and you'll have to verify to continue.
+6. Use Ctrl-C to terminate the code.
 
 
 License Information
