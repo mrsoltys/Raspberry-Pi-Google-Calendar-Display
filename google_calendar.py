@@ -21,7 +21,7 @@ FLOW = OAuth2WebServerFlow(
     user_agent='YOUR_APPLICATION_NAME/YOUR_APPLICATION_VERSION')
 
 # To disable the local server feature, uncomment the following line:
-# FLAGS.auth_local_webserver = False
+FLAGS.auth_local_webserver = True
 
 # If the Credentials don't exist or are invalid, run through the native client
 # flow. The Storage object will ensure that if successful the good
