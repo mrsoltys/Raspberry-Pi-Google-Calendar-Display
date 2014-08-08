@@ -52,8 +52,8 @@ void draw(void) {
     //Coil Temp/////////////////////////////////
     u8g.setFont(u8g_font_profont10);
     u8g.drawStr(1,40,"At:");  
-    u8g.setFont(u8g_font_fur14r);
-    u8g.setPrintPos(1,60);
+    u8g.setFont(u8g_font_fur11r);
+    u8g.setPrintPos(1,63);
     u8g.print(locationStr); 
 //    u8g.setFont(u8g_font_fur17);
 //    u8g.setPrintPos(180,29);
@@ -63,8 +63,8 @@ void draw(void) {
     //Coil Power////////////////////////////////
     u8g.setFont(u8g_font_profont10);
     u8g.drawStr(170,40,"Until:");  
-    u8g.setFont(u8g_font_fur14r);
-    u8g.setPrintPos(170,60);
+    u8g.setFont(u8g_font_fur11r);
+    u8g.setPrintPos(170,63);
     u8g.print(timeStr); 
  //   u8g.setFont(u8g_font_fur17);
  //   u8g.setPrintPos(180,60);
