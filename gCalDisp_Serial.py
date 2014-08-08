@@ -78,12 +78,13 @@ def printCurrentEvent(event):
 def main():
   ser.open()
   # Get Current Event
-  while True:
-    try:
-      events = getEvents()
-    except KeyboardInterrupt:
-      ser.close	            
-    time.sleep(60)
+  #while True:
+  try:
+    events = getEvents()
+  except KeyboardInterrupt:
+    ser.close
+  ser.close	            
+  #time.sleep(60)
 
 # This is just nice to have because it can tell the terminal 
 # running python where to find main()
