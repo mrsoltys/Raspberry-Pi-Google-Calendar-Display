@@ -17,4 +17,4 @@ Here's another list
 2. thing 2
 3. thing 3
 
-[Image1]: (ttps://github.com/mrsoltys/Raspberry-Pi-Google-Calendar-Display/blob/master/Photos/2014-08-06%2008.35.27.jpg "Optional title"
+[Image1]: https://github.com/mrsoltys/Raspberry-Pi-Google-Calendar-Display/blob/master/Photos/2014-08-06%2008.35.27.jpg "Optional title"
