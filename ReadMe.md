@@ -51,7 +51,19 @@ Getting Started with Raspberry Pi
     b.  A link will appear, and you'll have to verify to continue.
 6. Use Ctrl-C to terminate the code.
 
+Scheduling Tasks on Unix
+------------------------
 
+I used the crontab command to schedule the raspberry pi to run the python script every minute.  To view current scheduled commands use the command:
+
+        sudo crontab -l
+        
+ To run the python script, use:
+ 
+       * * * * * cd /home/pi/dev/gCalRPDisplay && python gCalDisp_Serial.py
+       
+  This will change the working directory to the correct location, and run the python script every minute.
+        
 License Information
 -------------------
 
