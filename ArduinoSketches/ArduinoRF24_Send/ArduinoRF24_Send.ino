@@ -11,26 +11,26 @@ const uint64_t pipes[2] = {
   0xF0F0F0F0E1LL, 0xF0F0F0F0D2LL
 };
 
-//Note: Maximum Payload size is 32 bytes... This struct is 50 bytes!
-typedef struct {
-  char summaryStr[20];
+  char summaryStr[27];
   char timeStr[10];
-  char locationStr[20];
-} calPacket;
-calPacket duino;
-//calPacket duinoRec;
+  char locationStr[22];
+  String incomming = "";
+  String summary;
+  String time;
+  String loc;
 
 char inChar = '!';
 
 void setup(void)
 {
+  clearStrings();
   radio.begin();
 
   // optionally, increase the delay between retries & # of retries
   radio.setRetries(15, 15);
   // optionally, reduce the payload size.  seems to
   // improve reliability
-   radio.setPayloadSize(22);
+  radio.setPayloadSize(28);
 
   Serial.begin(9600);
 
@@ -39,67 +39,70 @@ void setup(void)
   radio.startListening();
 }
 
-
-
 void loop() {
   bool ok = false;
-  if (Serial.available())  {
-    //need to reset Char arrays to be empty
-    //need to make sure arrays don't overfill...
-    int i = 0;
-    //do {
-    inChar = Serial.read(); // Read a character
-    while (inChar != '\0') {
-      if (inChar > 0) {
-        duino.summaryStr[i] = inChar; // Store it
-        i++;
-      }
-      inChar = Serial.read(); // Read a character
+  if(Serial.available()>0) {
+     summary = Serial.readStringUntil('\0');
+     time = Serial.readStringUntil('\0');
+     loc = Serial.readStringUntil('\0');
+//   
+//    Serial.print("Got Summary: ");
+//    Serial.println( summary);
+//    Serial.print("Got Time: ");
+//    Serial.println( time);
+//    Serial.print("Got Loc: ");
+//    Serial.println(loc); 
+//       
+    summary.toCharArray(summaryStr, 27);
+    time.toCharArray(timeStr,10);
+    loc.toCharArray(locationStr,22);
+    
+//    Serial.println(sizeof(summaryStr));
+//    Serial.println(summaryStr);
+//    Serial.println(sizeof(timeStr));
+//    Serial.println(timeStr);
+//    Serial.println(sizeof(locationStr));
+//    Serial.println(locationStr);
+    sendStringsRadio ();
     }
-    i = 0;
-    inChar = Serial.read(); // Read a character
-    while (inChar != '\0') {
-      if (inChar > 0) {
-        duino.timeStr[i] = inChar; // Store it
-        i++;
-      }
-      inChar = Serial.read(); // Read a character
-    }
-    i = 0;
-    inChar = Serial.read(); // Read a character
-    while (inChar != '\0') {
-      if (inChar > 0) {
-        duino.locationStr[i] = inChar; // Store it
-        i++;
-      }
-      inChar = Serial.read(); // Read a character
-    }
+   clearStrings() ; 
+}
 
-    //}
-    //while (Serial.available() > 0);
+void clearStrings() {
+  for ( int i = 0; i < sizeof( summaryStr);  i++ )
+     summaryStr[i] = ' ';
+  for ( int i = 0; i < sizeof( timeStr);  i++ )
+     timeStr[i] = ' ';
+  for ( int i = 0; i < sizeof( locationStr);  i++ )
+     locationStr[i] = ' ';
+}
 
-    // Stop listening so we can talk.
+void sendStringsRadio () {
+   bool ok = false;
+   // Stop listening so we can talk.
     radio.stopListening();
    // do {
-   ok = radio.write( &duino.summaryStr, sizeof(duino.summaryStr) );
+   ok = radio.write( &summaryStr, sizeof(summaryStr) );
+   // Serial.print("Sent Summary: ");
+   // Serial.println(summaryStr);
    // } while(!ok);
    radio.startListening();
     delay(50);
     radio.stopListening();
      // do {
-      ok = radio.write( &duino.timeStr, sizeof(duino.timeStr) );
+      ok = radio.write( &timeStr, sizeof(timeStr) );
+     // Serial.print(sizeof(timeStr));
+     // Serial.print(" Sent time: ");
+     // Serial.println(timeStr);
     //} while(!ok);
     radio.startListening();
     delay(50);
     radio.stopListening();
    // do {
-    ok = radio.write( &duino.locationStr, sizeof(duino.locationStr) );
+    ok = radio.write( &locationStr, sizeof(locationStr) );
+    // Serial.print("Sent location: ");
+   // Serial.println(locationStr);
    // } while(!ok);
     radio.startListening();
-
-    // Try again 1s later
-    delay(1000);
-  }
 }
-
 
