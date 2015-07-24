@@ -3,13 +3,11 @@
 #include <RF24.h>
 
 // Hardware configuration
-
-// Set up nRF24L01 radio on SPI bus plus pins 9 & 10
-RF24 radio(9, 10);
-// Radio pipe addresses for the 2 nodes to communicate.
-const uint64_t pipes[2] = {
-  0xF0F0F0F0E1LL, 0xF0F0F0F0D2LL
-};
+  // Set up nRF24L01 radio on SPI bus plus pins 9 & 10
+    RF24 radio(9, 10);
+  // Radio pipe addresses for the 2 nodes to communicate.
+    const uint64_t pipes[2] = {
+      0xF0F0F0F0E1LL, 0xF0F0F0F0D2LL};
 
   char summaryStr[27];
   char timeStr[10];
@@ -27,10 +25,9 @@ void setup(void)
   radio.begin();
 
   // optionally, increase the delay between retries & # of retries
-  radio.setRetries(15, 15);
-  // optionally, reduce the payload size.  seems to
-  // improve reliability
-  radio.setPayloadSize(28);
+    radio.setRetries(15, 15);
+  // optionally, reduce the payload size.  seems to improve reliability
+    radio.setPayloadSize(28);
 
   Serial.begin(9600);
 
@@ -45,24 +42,25 @@ void loop() {
      summary = Serial.readStringUntil('\0');
      time = Serial.readStringUntil('\0');
      loc = Serial.readStringUntil('\0');
-//   
-//    Serial.print("Got Summary: ");
-//    Serial.println( summary);
-//    Serial.print("Got Time: ");
-//    Serial.println( time);
-//    Serial.print("Got Loc: ");
-//    Serial.println(loc); 
-//       
+   
+    Serial.print("Got Summary: ");
+    Serial.println( summary);
+    Serial.print("Got Time: ");
+    Serial.println( time);
+    Serial.print("Got Loc: ");
+    Serial.println(loc); 
+       
     summary.toCharArray(summaryStr, 27);
     time.toCharArray(timeStr,10);
     loc.toCharArray(locationStr,22);
     
-//    Serial.println(sizeof(summaryStr));
-//    Serial.println(summaryStr);
-//    Serial.println(sizeof(timeStr));
-//    Serial.println(timeStr);
-//    Serial.println(sizeof(locationStr));
-//    Serial.println(locationStr);
+    Serial.println(sizeof(summaryStr));
+    Serial.println(summaryStr);
+    Serial.println(sizeof(timeStr));
+    Serial.println(timeStr);
+    Serial.println(sizeof(locationStr));
+    Serial.println(locationStr);
+
     sendStringsRadio ();
     }
    clearStrings() ; 
@@ -80,29 +78,16 @@ void clearStrings() {
 void sendStringsRadio () {
    bool ok = false;
    // Stop listening so we can talk.
-    radio.stopListening();
-   // do {
-   ok = radio.write( &summaryStr, sizeof(summaryStr) );
-   // Serial.print("Sent Summary: ");
-   // Serial.println(summaryStr);
-   // } while(!ok);
+   radio.stopListening();
+     ok = radio.write( &summaryStr, sizeof(summaryStr) );
    radio.startListening();
-    delay(50);
-    radio.stopListening();
-     // do {
-      ok = radio.write( &timeStr, sizeof(timeStr) );
-     // Serial.print(sizeof(timeStr));
-     // Serial.print(" Sent time: ");
-     // Serial.println(timeStr);
-    //} while(!ok);
-    radio.startListening();
-    delay(50);
-    radio.stopListening();
-   // do {
-    ok = radio.write( &locationStr, sizeof(locationStr) );
-    // Serial.print("Sent location: ");
-   // Serial.println(locationStr);
-   // } while(!ok);
-    radio.startListening();
+   delay(20);
+   radio.stopListening();
+     ok = radio.write( &timeStr, sizeof(timeStr) );
+   radio.startListening();
+   delay(20);
+   radio.stopListening();
+     ok = radio.write( &locationStr, sizeof(locationStr) );
+   radio.startListening();
 }
 
