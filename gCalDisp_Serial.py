@@ -22,10 +22,6 @@ def getEvents(pageToken=None):
   now = datetime.datetime.utcnow();
   future = now + datetime.timedelta(minutes=1)
     
-  # for debugging, print now and future to terminal.
-  print now.isoformat()
-  print future.isoformat()
-
   #query google_calendar for current event
   page_token = None
   events = google_calendar.service.events().list(
@@ -55,7 +51,7 @@ def printCurrentEvent(event):
   # Print out current event summary, location, and end time. If any of those 
   # fields does not exist, ignore the KeyError exception and move along.
   print event['summary']
-  ser.write(' '+ event['summary']+'\0')
+  ser.write(event['summary']+'\0')
 
   # Note: endTime is in iso format with timezone info, we just need to strip
   # the last 6 digits to get the current local time and then
