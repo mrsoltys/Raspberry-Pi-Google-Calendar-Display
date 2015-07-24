@@ -12,12 +12,10 @@
   char summaryStr[27];
   char timeStr[10];
   char locationStr[22];
-  String incomming = "";
+  
   String summary;
   String time;
   String loc;
-
-char inChar = '!';
 
 void setup(void)
 {
@@ -43,23 +41,23 @@ void loop() {
      time = Serial.readStringUntil('\0');
      loc = Serial.readStringUntil('\0');
    
-    Serial.print("Got Summary: ");
-    Serial.println( summary);
-    Serial.print("Got Time: ");
-    Serial.println( time);
-    Serial.print("Got Loc: ");
-    Serial.println(loc); 
+//    Serial.print("Got Summary: ");
+//    Serial.println( summary);
+//    Serial.print("Got Time: ");
+//    Serial.println( time);
+//    Serial.print("Got Loc: ");
+//    Serial.println(loc); 
        
     summary.toCharArray(summaryStr, 27);
     time.toCharArray(timeStr,10);
     loc.toCharArray(locationStr,22);
     
-    Serial.println(sizeof(summaryStr));
-    Serial.println(summaryStr);
-    Serial.println(sizeof(timeStr));
-    Serial.println(timeStr);
-    Serial.println(sizeof(locationStr));
-    Serial.println(locationStr);
+//    Serial.println(sizeof(summaryStr));
+//    Serial.println(summaryStr);
+//    Serial.println(sizeof(timeStr));
+//    Serial.println(timeStr);
+//    Serial.println(sizeof(locationStr));
+//    Serial.println(locationStr);
 
     sendStringsRadio ();
     }
@@ -77,7 +75,6 @@ void clearStrings() {
 
 void sendStringsRadio () {
    bool ok = false;
-   // Stop listening so we can talk.
    radio.stopListening();
      ok = radio.write( &summaryStr, sizeof(summaryStr) );
    radio.startListening();
